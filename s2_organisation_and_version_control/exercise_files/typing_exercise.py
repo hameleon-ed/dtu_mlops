@@ -1,5 +1,13 @@
+
 import torch
 from torch import nn
+import typing
+from typing import Callable, Optional, Tuple, Union, List
+
+"""
+from typing import Callable, Optional, Tuple, Union, List
+# you will need all of them in your code
+"""
 
 
 class Network(nn.Module):
@@ -12,7 +20,13 @@ class Network(nn.Module):
 
     """
 
-    def __init__(self, input_size, output_size, hidden_layers, drop_p=0.5) -> None:
+    def __init__(
+            self,
+            input_size: int,
+            output_size,
+            hidden_layers,
+            drop_p=0.5
+            ) -> None:
         super().__init__()
         # Input to a hidden layer
         self.hidden_layers = nn.ModuleList([nn.Linear(input_size, hidden_layers[0])])
